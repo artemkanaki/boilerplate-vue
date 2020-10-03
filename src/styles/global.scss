@@ -1,0 +1,36 @@
+@import "variables";
+
+html, body {
+  // scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-size: $fontSize;
+  font-display: swap;
+  line-height: 1.42857143;
+}
+
+#app {
+  width: 100%;
+}
+
+button:focus, input:focus, textarea:focus {
+  outline:0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100%;
+}
+
+// NOTICE: safari wont work correctly with inputs without this lines
+input, textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+
+$messageWidth: 300px;
+$messageMargin: 30px;
+$horizontalPadding: 25px;
+$svgWidth: 50px;
+$svgMargin: 20px;
+$svgWidth: 50px;
+$errorBackground: red;
+$errorCountBackground: #fff;
+$errorCountTextColor: #000;
+
+.error-message {
+  position: fixed;
+  right: calc(-1 * (#{$messageWidth} + 2 * #{$horizontalPadding}));
+  top: $messageMargin;
+  z-index: 10;
+  padding: 15px $horizontalPadding;
+  background-color: $errorBackground;
+  color: $errorCountBackground;
+  -webkit-border-radius: $smallBorderRadius;
+  -moz-border-radius: $smallBorderRadius;
+  border-radius: $smallBorderRadius;
+  opacity: 0;
+
+  width: $messageWidth;
+
+  transition-duration: 0.5s;
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+    width: $svgWidth;
+    height: $svgWidth;
+    margin-right: $svgMargin;
+  }
+
+  .message {
+    display: inline-block;
+    vertical-align: top;
+    max-width: calc(#{$messageWidth} - #{$svgWidth} - #{$svgMargin});
+
+    p {
+      margin: 0 0 .3rem 0;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .errors-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $errorCountTextColor;
+    background: $errorCountBackground;
+    -webkit-border-radius: $smallBorderRadius;
+    -moz-border-radius: $smallBorderRadius;
+    border-radius: $smallBorderRadius;
+    padding: 3px 7px;
+    font-weight: 600;
+  }
+
+}
+
+.error-message-shown {
+  opacity: 1;
+  right: $messageMargin;
+}
